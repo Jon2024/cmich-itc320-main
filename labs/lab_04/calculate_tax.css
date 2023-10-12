@@ -29,3 +29,8 @@ span {
 div:nth-child(2) {
     margin-bottom: 1.5em;
 }
+.button{
+    margin-left: 1em;
+    margin-right: 0.5em;
+    cursor: pointer;
+}
