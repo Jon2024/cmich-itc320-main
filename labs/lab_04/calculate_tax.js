@@ -32,10 +32,22 @@ var clearEntries = () => {
 	$("#tax_rate").value = "";
 	$("#sale_tax").value = "";
 	$("#total").value = "";
+	$("#subtotal").select();
+}
+
+var clearSubtotal = () => {
+	$("#subtotal").value = "";
+}
+
+var clearTaxRate = () => {
+	$("#tax_rate").value = "";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
 	// add event handlers
+	$("#subtotal").select();
 	$("#calculate").addEventListener("click", processEntries);
 	$("#clear").addEventListener("click", clearEntries); //When button is pushed, clears all.
+	$("#subtotal").addEventListener("click", clearSubtotal); //When the box is clicked, removes text
+	$("#tax_rate").addEventListener("click", clearTaxRate); //When the box is clicked, removes text
 });

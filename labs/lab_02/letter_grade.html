@@ -10,13 +10,17 @@
         <h1>Show letter grade</h1>
         <script>
             while(true){
-                n = parseInt(prompt("Enter number grade from 0 to 100 \nOr enter 999 to end entries"));
+                num = parseInt(prompt("Enter number grade from 0 to 250 \nOr enter 999 to end entries"));
                 let grade;
 
-                if(n == 999 || n < 0){
+                if(num == 999 || num < 0){
                     process.exit(0);
                 }
 
+                //Calculate percentage, 250 is 100%
+                let n;
+                n = ((num / 250) * 100).toFixed(0);
+                    
                 //create if block to determine letter grade
                 //When using else if, use AND / OR!!!
                 if(94 <= n && n < 101){ //Was not reconizing code, fixed by replacing "== 100" to "< 101".
