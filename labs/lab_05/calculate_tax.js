@@ -31,37 +31,37 @@ var calculateTax = (income) => {
 	//total = take Over number(has one decimal place to the left) + % of input number - exceed number
 	//if block $0 < income < $9875
 	if(income > 0 && income <= 9875){
-		total = (0 + (income * 0.1)) - 0;
+		total = (0 + (income * 0.1));
 		$("#tax").value = total.toFixed(2);
 	}
 	//$9875 < income < $40125
 	else if(income > 9875 && income <= 40125){
-		total = (987.50 + (income * 0.12)) - 9875;
+		total = (987.50 + ((income - 9875) * 0.12));
 		$("#tax").value = total.toFixed(2);
 	}
 	//$40125 < income < $85525
 	else if(income > 40125 && income <= 85525){
-		total = (4617.50 + (income * 0.22)) - 40125;
+		total = 4617.50 + ((income - 40125) * 0.22);
 		$("#tax").value = total.toFixed(2);
 	}
 	// $85525 < income < $163300
 	else if(income > 85525 && income <= 163300){
-		total = (14605.50 + (income * 0.24)) - 85525;
+		total = 14605.50 + ((income - 85525) * 0.24);
 		$("#tax").value = total.toFixed(2);
 	}
 	// $163300 < income < $207350
 	else if(income > 163300 && income <= 207350){
-		total = (33271.50 + (income * 0.32)) - 163300;
+		total = 33271.50 + ((income - 163300) * 0.32);
 		$("#tax").value = total.toFixed(2);
 	}
 	// $207350 < income < $518400
 	else if(income > 207350 && income <= 518400){
-		total = (47367.50 + (income * 0.35)) - 207350;
+		total = 47367.50 + ((income - 207350) * 0.35);
 		$("#tax").value = total.toFixed(2);
 	}
 	// $518400 < income
 	else if(income > 518400){
-		total = (156235.00 + (income * 0.37)) - 518400;
+		total = 156235.00 + ((income - 518400) * 0.37);
 		$("#tax").value = total.toFixed(2);
 	}
 }
