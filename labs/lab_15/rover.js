@@ -7,6 +7,14 @@ const request = "?api_key=DEMO_KEY&page=1";
 const roverData = new Map();
 
 // asynchronous getJson() function that makes API requests goes here
+const url = domain + request;
+
+const getJson = async (url)  => {
+    const response = await fetch(url);
+    console.log(url);
+    return response.json();  
+}
+//It works, but sometimes it would exceeded my rate limit for the website
 
 const getSelectedDate = () => {
     const year = $("#year").val();

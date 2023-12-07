@@ -54,6 +54,13 @@ $(document).ready( () => {
         
         if (isValid) { 
             // code that saves profile info goes here
+            localStorage.setItem("email", email);
+            localStorage.setItem("phone", phone);
+            localStorage.setItem("zip", zip);
+            localStorage.setItem("dob", dob);
+
+            //send it to profile.html
+            location = 'profile.html';
         }
         
         $("#email").focus(); 

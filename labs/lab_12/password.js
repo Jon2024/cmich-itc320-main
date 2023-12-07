@@ -13,9 +13,22 @@ const getRandomNumber = max => {
 $(document).ready( () => {
     $("#generate").click( () => {
         $("#password").val( "" ); // clear previous entry
-    
-        const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+!@";
         
+        const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+!@";
+        let password = ""
+
+        let num = parseFloat($("#num").val());
+        if( isNaN(num)) { //checks if it's a number 
+            alert("Please enter a valid number.")
+        }
+        else{
+        for(let i = 0; i < num; i++){
+            let random = getRandomNumber(chars.length - 1);
+            password += chars.charAt(random);
+
+            $("#password").val(password);
+        }
+    }
     }); // end click()
     
     $("#clear").click( () => {
